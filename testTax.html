@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Tax Calculation Tests</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.10.1.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.10.1.js"></script>
+  <script type="module">
+    import IncomeTax from './js/IncomeTax.js';
+
+// test cases for the IncomeTax class
+QUnit.test("Ontario Tax Calculation Tests", function (assert) {
+    assert.strictEqual(new IncomeTax(45000, 2000).calculateOntarioTax().toFixed(2), "2272.50", "Income $45,000: Correct Ontario tax calculated");
+    assert.strictEqual(new IncomeTax(90000, 3000).calculateOntarioTax().toFixed(2), "6216.53", "Income $90,000: Correct Ontario tax calculated");
+    assert.strictEqual(new IncomeTax(140000, 4000).calculateOntarioTax().toFixed(2), "11626.42", "Income $140,000: Correct Ontario tax calculated");
+    assert.strictEqual(new IncomeTax(200000, 5000).calculateOntarioTax().toFixed(2), "18822.42", "Income $200,000: Correct Ontario tax calculated");
+    assert.strictEqual(new IncomeTax(300000, 6000).calculateOntarioTax().toFixed(2), "31782.42", "Income $300,000: Correct Ontario tax calculated");
+});
+
+QUnit.test("Federal Tax Calculation Tests", function (assert) {
+    assert.strictEqual(new IncomeTax(45000, 2000).calculateFederalTax().toFixed(2), "6770.78", "Income $45,000: Correct federal tax calculated");
+    assert.strictEqual(new IncomeTax(90000, 3000).calculateFederalTax().toFixed(2), "16694.74", "Income $90,000: Correct federal tax calculated");
+    assert.strictEqual(new IncomeTax(140000, 4000).calculateFederalTax().toFixed(2), "29737.06", "Income $140,000: Correct federal tax calculated");
+    assert.strictEqual(new IncomeTax(200000, 5000).calculateFederalTax().toFixed(2), "47137.06", "Income $200,000: Correct federal tax calculated");
+    assert.throws(function () { new IncomeTax("invalid input", 5000).calculateFederalTax(); }, "Invalid input: Correctly throws error for non-numeric input");
+});
+
+  </script>
+</body>
+</html>
