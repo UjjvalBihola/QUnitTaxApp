@@ -1,80 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax App</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Tax App</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="testTax.html">Test Tax</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container mt-4">
-        <h2>Canada - Tax Calculation</h2>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="total_income">Total Income</label>
-                <input type="number" class="form-control" id="total_income" name="total_income" required>
-            </div>
-            <div class="form-group">
-                <label for="total_deduction">Total Deductions</label>
-                <input type="number" class="form-control" id="total_deduction" name="total_deduction" required>
-            </div>
-            <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
-        </form>
-        
-        <div class="card mt-3">
-            <div class="card-body">
-                <h4 class="card-title">Tax Details</h4>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>Federal Tax:</th>
-                            <td>$<span id="fedTax">0</span></td>
-                        </tr>
-                        <tr>
-                            <th>Ontario Tax:</th>
-                            <td>$<span id="onTax">0</span></td>
-                        </tr>
-                        <tr>
-                            <th>Total Tax:</th>
-                            <td>$<span id="totalTax">0</span></td>
-                        </tr>
-                        <tr>
-                            <th>Tax Owing:</th>
-                            <td>$<span id="taxOwing">0</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Tax App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testTax.html">Test Tax</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container text-center">
-            <span class="text-muted">Ujjvalsinh Bihola 8884739</span>
-        </div>
-    </footer>
+  <div class="container mt-4">
+    <h2>Canada - Tax Calculation</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="total_income">Total Income</label>
+        <input type="number" class="form-control" id="total_income" name="total_income" required>
+      </div>
+      <div class="form-group">
+        <label for="total_deduction">Total Deductions</label>
+        <input type="number" class="form-control" id="total_deduction" name="total_deduction" required>
+      </div>
+      <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
+    </form>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <div class="card mt-3">
+      <div class="card-body">
+        <h4 class="card-title">Tax Details</h4>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Federal Tax:</th>
+              <td>$<span id="fedTax">0</span></td>
+            </tr>
+            <tr>
+              <th>Ontario Tax:</th>
+              <td>$<span id="onTax">0</span></td>
+            </tr>
+            <tr>
+              <th>Total Tax:</th>
+              <td>$<span id="totalTax">0</span></td>
+            </tr>
+            <tr>
+              <th>Tax Owing:</th>
+              <td>$<span id="taxOwing">0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+      <span class="text-muted">Ujjvalsinh Bihola 8884739</span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
